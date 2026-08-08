@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/bg_screen"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMainHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnLogout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_lock_power_off"
+            android:contentDescription="@string/logOutText"
+            app:tint="@color/black"
+            app:layout_constraintTop_toTopOf="@id/tvMainTitle"
+            app:layout_constraintBottom_toBottomOf="@id/tvMainTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/tvMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/AppName"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/llFilterBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@color/white"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/clMainHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFilterNeighborhood"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="@color/border_gray"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spFilterNeighborhood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:hint="@string/filterBarAllNeighborhoodText"
+                android:textSize="13sp"
+                app:simpleItems="@array/default_neighborhoods" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilFilterCity"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxStrokeColor="@color/border_gray"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spFilterCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/filterBarAllCityText"
+                android:inputType="none"
+                android:textSize="13sp"
+                app:simpleItems="@array/cities_array" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReports"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@id/llFilterBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_report" />
+
+    <TextView
+        android:id="@+id/tvEmptyReports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NoReportsAvailableText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/rvReports"
+        app:layout_constraintBottom_toBottomOf="@id/rvReports"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/addNewReportText"
+        android:src="@android:drawable/ic_input_add"
+        app:tint="@color/white"
+        app:shapeAppearance="@style/SizeOverlay.Material3Expressive.Button.IconButton.Large.Narrow.Square"
+        app:backgroundTint="@color/light_dark_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

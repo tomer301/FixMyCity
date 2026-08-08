@@ -1,0 +1,24 @@
+<resources>
+    <string name="AppName">FixMyCity</string>
+    <string name="AppDescription">דיווח ושקיפות במפגעים עירוניים</string>
+    <string name="EmailHint">דואר אלקטרוני</string>
+    <string name="PasswordHint">סיסמה</string>
+    <string name="LoginText">התחברות</string>
+    <string name="NewAccountText">יצירת חשבון חדש</string>
+    <string name="appLogoDescription">AppLogo</string>
+    <string name="registerWord">להרשמה</string>
+    <string name="NoAccountQuestionText">אין לך חשבון?</string>
+    <string name="newAccountHeader">יצירת חשבון חדש</string>
+    <string name="newAccountDescText">הצטרף לקהילה והתחל לדווח</string>
+    <string name="passwordConstraint">סיסמה (לפחות 6 תווים)</string>
+    <string name="passwordVerifyText">אימות סיסמה</string>
+    <string name="signUpText">הרשמה</string>
+    <string name="signInText">להתחברות</string>
+    <string name="HavingAccountQuestionText">כבר יש לך חשבון?</string>
+    <string name="emailHintFilled">fixMyCity@mail.com</string>
+    <string name="filterBarAllCityText">כל הערים</string>
+    <string name="filterBarAllNeighborhoodText">כל השכונות</string>
+    <string name="addNewReportText">הוספת דיווח חדש</string>
+    <string name="NoReportsAvailableText">אין דיווחים באזור הנבחר</string>
+    <string name="logOutText">התנתקות מהמערכת</string>
+</resources>

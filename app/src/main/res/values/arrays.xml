@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities_array">
+        <item>* בחר עיר</item>
+        <item>תל אביב-יפו</item>
+        <item>גבעתיים</item>
+        <item>רמת-גן</item>
+        <item>ירושלים</item>
+        <item>חיפה</item>
+    </string-array>
+
+    <array name="city_neighborhood_arrays">
+        <item>@array/default_neighborhoods</item>
+        <item>@array/tlv_neighborhoods</item>
+        <item>@array/givatayim_neighborhoods</item>
+        <item>@array/ramat_gan_neighborhoods</item>
+        <item>@array/jerusalem_neighborhoods</item>
+        <item>@array/haifa_neighborhoods</item>
+    </array>
+
+    <!-- NEIGHBORHOOD LIST PER CITY -->
+
+    <string-array name="default_neighborhoods">
+        <item>* נא לבחור עיר תחילה</item>
+    </string-array>
+
+    <string-array name="tlv_neighborhoods">
+        <item>* בחר שכונה</item>
+        <item>פלורנטין</item>
+        <item>מרכז העיר</item>
+        <item>רמת אביב</item>
+        <item>נווה צדק</item>
+    </string-array>
+
+    <string-array name="givatayim_neighborhoods">
+        <item>* בחר שכונה</item>
+        <item>בורוכוב</item>
+        <item>גבעת רמב"ם</item>
+        <item>ארלוזרוב</item>
+    </string-array>
+
+    <string-array name="ramat_gan_neighborhoods">
+        <item>* בחר שכונה</item>
+        <item>החרוזים</item>
+        <item>הגפן</item>
+        <item>נחלת גנים</item>
+        <item>שיכון ותיקים</item>
+        <item>הלל</item>
+        <item>מתחם הבורסה</item>
+        <item>לב העיר</item>
+        <item>הראשונים</item>
+        <item>יד לבנים</item>
+        <item>תל-בנימין</item>
+        <item>תל גנים</item>
+        <item>קריית בורכוב</item>
+        <item>מרום נווה</item>
+        <item>נווה יהושוע</item>
+        <item>רמת חן</item>
+        <item>רמת עמידר</item>
+        <item>רמת השקמה</item>
+        <item>רמת אפעל</item>
+        <item>קריית קריניצי</item>
+    </string-array>
+
+    <string-array name="jerusalem_neighborhoods">
+        <item>* בחר שכונה</item>
+        <item>נחלאות</item>
+        <item>רחביה</item>
+        <item>פסגת זאב</item>
+        <item>תלפיות</item>
+    </string-array>
+
+    <string-array name="haifa_neighborhoods">
+        <item>* בחר שכונה</item>
+        <item>הדר</item>
+        <item>כרמל</item>
+        <item>בת גלים</item>
+    </string-array>
+
+    <!-- CATEGORY LIST -->
+
+    <string-array name="categories_array">
+        <item>* בחירת קטגוריית מפגע</item>
+        <item>תשתיות וכבישים</item>
+        <item>תאורת רחוב וחשמל</item>
+        <item>ניקיון ותברואה</item>
+        <item>גינון וצמחייה</item>
+        <item>מפגע בטיחותי</item>
+        <item>אחר</item>
+    </string-array>
+</resources>

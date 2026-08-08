@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:strokeColor="@color/border_gray"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl">
+
+        <ImageView
+            android:id="@+id/ivReportImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="#E0E0E0"
+            android:contentDescription="תמונת המפגע"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@android:drawable/ic_menu_gallery" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="התקבל"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_status_badge"
+            app:layout_constraintTop_toTopOf="@id/ivReportImage"
+            app:layout_constraintStart_toStartOf="@id/ivReportImage"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="תשתיות וכבישים"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/light_dark_blue"
+            android:background="#E8F5E9"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            app:layout_constraintTop_toBottomOf="@id/ivReportImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="תל אביב-יפו, פלורנטין"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginHorizontal="16dp" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="רחוב אברבנאל 42"
+            android:textSize="13sp"
+            android:textColor="#616161"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toBottomOf="@id/tvLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="2dp"
+            android:layout_marginHorizontal="16dp" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="בור עמוק במרכז הכביש המהווה סכנה רצינית לרוכבי אופנוע ומכוניות."
+            android:textSize="14sp"
+            android:textColor="#212121"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textAlignment="viewStart"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="16dp" />
+
+        <TextView
+            android:id="@+id/tvTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06/08/2026 14:30"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:id="@+id/llUpvote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp">
+
+            <ImageButton
+                android:id="@+id/btnUpvote"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_thumb_up"
+                android:contentDescription="הצבעת תמיכה במפגע"
+                app:tint="@color/light_dark_blue" />
+
+            <TextView
+                android:id="@+id/tvUpVotedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/light_dark_blue"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

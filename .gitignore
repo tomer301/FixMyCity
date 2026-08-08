@@ -1,0 +1,49 @@
+# --- Android Studio & JetBrains IDE ---
+*.iml
+.gradle/
+.idea/
+local.properties
+.kotlin/
+
+# --- Security & Sensitive Files ---
+google-services.json
+GoogleService-Info.plist
+
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+
+secrets.xml
+secrets.properties
+local.defaults.properties
+
+# --- Build Outputs ---
+build/
+/build/
+/*/build/
+.externalNativeBuild
+.cxx
+/captures
+
+# --- OS Generated Files ---
+.DS_Store
+Thumbs.db
+
+# --- Logs & Temp Files ---
+*.log
+*.tmp
+*.temp
+*.hprof
+.navigation/
+
+# --- Kotlin Output ---
+/lib/
+/target/
+/bin/
+
+# --- App Bundles & APKs ---
+*.apk
+*.apks
+*.aab
