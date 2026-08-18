@@ -2,11 +2,8 @@ package com.example.fixmycity.auth
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fixmycity.MainActivity
-import com.example.fixmycity.auth.RegisterActivity
 import com.example.fixmycity.databinding.ActivityLoginBinding
 import com.example.fixmycity.utils.AuthValidator
 import com.example.fixmycity.utils.navigateToMain
@@ -54,8 +51,8 @@ class LoginActivity : AppCompatActivity() {
         val emailError = AuthValidator.validateEmail(email)
         val passwordError = AuthValidator.validatePassword(password)
 
-        binding.tilEmail.error = null
-        binding.tilPassword.error = null
+        binding.tilEmail.error = emailError
+        binding.tilPassword.error = passwordError
 
         if (emailError != null || passwordError != null) return
 
