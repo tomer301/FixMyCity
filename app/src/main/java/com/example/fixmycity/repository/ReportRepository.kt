@@ -4,7 +4,6 @@ import android.net.Uri
 import com.example.fixmycity.models.HazardReport
 import com.example.fixmycity.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
@@ -23,7 +22,7 @@ class ReportRepository {
         onSuccess: (String) -> Unit,
         onFailure: (Exception) -> Unit
     ) {
-        val fileName = "reports/${UUID.randomUUID()}.jpg"
+        val fileName = "${Constants.FirebaseCollection.STORAGE_REPORTS_IMAGES}/${UUID.randomUUID()}.jpg"
         val imageRef = storage.reference.child(fileName)
 
         imageRef.putFile(imageUri)
