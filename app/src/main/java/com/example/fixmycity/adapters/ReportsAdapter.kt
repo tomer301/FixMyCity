@@ -10,17 +10,17 @@ import com.example.fixmycity.R
 import com.example.fixmycity.databinding.ItemReportBinding
 import com.example.fixmycity.models.HazardReport
 import com.example.fixmycity.utils.SignalManager
-import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
 class ReportsAdapter(
+    private val currentUserId: String,
     private var reportsList: List<HazardReport> = emptyList(),
     private val onUpvoteClickListener: (HazardReport) -> Unit
 )  : RecyclerView.Adapter<ReportsAdapter.ReportViewHolder>() {
 
-    inner class ReportViewHolder(val binding: ItemReportBinding) :
+    class ReportViewHolder(val binding: ItemReportBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReportViewHolder {
@@ -55,7 +55,6 @@ class ReportsAdapter(
                 .error(android.R.drawable.stat_notify_error)
                 .into(ivReportImage)
 
-            val currentUserId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
             val isOwner = report.reporterUserId == currentUserId && currentUserId.isNotEmpty()
             val isUpvoted = report.upVotedUserIds.contains(currentUserId)
 

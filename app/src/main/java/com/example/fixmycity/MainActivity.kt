@@ -3,7 +3,6 @@ package com.example.fixmycity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fixmycity.adapters.ReportsAdapter
@@ -13,7 +12,6 @@ import com.example.fixmycity.models.HazardReport
 import com.example.fixmycity.repository.ReportRepository
 import com.example.fixmycity.utils.CityNeighborhoodHelper
 import com.example.fixmycity.utils.SignalManager
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ListenerRegistration
 
 class MainActivity : AppCompatActivity() {
@@ -64,9 +62,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        reportsAdapter = ReportsAdapter { clickedReport ->
+        val currentUserId = reportRepository.getCurrentUserId()
+        reportsAdapter = ReportsAdapter(
+            currentUserId = currentUserId,
+            onUpvoteClickListener = { clickedReport ->
             handleUpvoteToggle(clickedReport)
-        }
+            }
+        )
 
         binding.rvReports.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
