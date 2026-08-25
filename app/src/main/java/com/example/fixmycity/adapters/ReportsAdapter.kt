@@ -23,6 +23,9 @@ class ReportsAdapter(
     class ReportViewHolder(val binding: ItemReportBinding) :
         RecyclerView.ViewHolder(binding.root)
 
+    private var upvotedColor: ColorStateList? = null
+    private var defaultColor: ColorStateList? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReportViewHolder {
         val binding = ItemReportBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -35,6 +38,13 @@ class ReportsAdapter(
     override fun onBindViewHolder(holder: ReportViewHolder, position: Int) {
         val report = reportsList[position]
         val context = holder.itemView.context
+
+        if (upvotedColor == null) {
+            val blueColor = androidx.core.content.ContextCompat.getColor(context, R.color.light_dark_blue)
+            val grayColor = androidx.core.content.ContextCompat.getColor(context, R.color.border_gray)
+            upvotedColor = ColorStateList.valueOf(blueColor)
+            defaultColor = ColorStateList.valueOf(grayColor)
+        }
 
         with(holder.binding) {
             tvCategory.text = report.category
@@ -58,14 +68,10 @@ class ReportsAdapter(
             val isOwner = report.reporterUserId == currentUserId && currentUserId.isNotEmpty()
             val isUpvoted = report.upVotedUserIds.contains(currentUserId)
 
-            val grayColor = androidx.core.content.ContextCompat.getColor(context, R.color.border_gray)
-            val blueColor = androidx.core.content.ContextCompat.getColor(context, R.color.light_dark_blue)
-
-            if (isUpvoted) {
-                ImageViewCompat.setImageTintList(btnUpvote, ColorStateList.valueOf(blueColor))
-            } else {
-                ImageViewCompat.setImageTintList(btnUpvote, ColorStateList.valueOf(grayColor))
-            }
+            ImageViewCompat.setImageTintList(
+                btnUpvote,
+                if (isUpvoted) upvotedColor else defaultColor
+            )
 
             llUpvote.setOnClickListener {
                 if (isOwner) {
