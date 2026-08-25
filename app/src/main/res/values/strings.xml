@@ -21,7 +21,7 @@
     <string name="addNewReportText">הוספת דיווח חדש</string>
     <string name="NoReportsAvailableText">אין דיווחים באזור הנבחר</string>
     <string name="logOutText">התנתקות מהמערכת</string>
-    <string name="backToMainActicityDesc">חזרה למסך ראשי</string>
+    <string name="backToMainActivityDesc">חזרה למסך ראשי</string>
     <string name="newReportTextHeader">דיווח חדש</string>
     <string name="reportImageDesc">תמונת המפגע</string>
     <string name="reportImageText">צילום / צירוף תמונת מפגע *</string>
@@ -31,4 +31,13 @@
     <string name="optionalAddressHInt">רחוב ומספר בית (אופציונלי)</string>
     <string name="chooseCategoryHint">בחירת קטגוריה *</string>
     <string name="sendReportTextBtn">שליחת דיווח</string>
+    <string name="reportImagePlaceholder">תמונת המפגע</string>
+    <string name="reportStatusText">התקבל</string>
+    <string name="categoryTypeText">תשתיות וכבישים</string>
+    <string name="cityNameAndNeighborhoodText">תל אביב-יפו, פלורנטין</string>
+    <string name="addressSpecificationText">רחוב אברבנאל 42</string>
+    <string name="hazardDescriptionTextExample">בור עמוק במרכז הכביש המהווה סכנה רצינית לרוכבי אופנוע ומכוניות.</string>
+    <string name="dateExample">06/08/2026 14:30</string>
+    <string name="toggleUpvoteIcon">הצבעת תמיכה במפגע</string>
+    <string name="zero">0</string>
 </resources>
