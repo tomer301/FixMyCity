@@ -21,4 +21,14 @@
     <string name="addNewReportText">הוספת דיווח חדש</string>
     <string name="NoReportsAvailableText">אין דיווחים באזור הנבחר</string>
     <string name="logOutText">התנתקות מהמערכת</string>
+    <string name="backToMainActicityDesc">חזרה למסך ראשי</string>
+    <string name="newReportTextHeader">דיווח חדש</string>
+    <string name="reportImageDesc">תמונת המפגע</string>
+    <string name="reportImageText">צילום / צירוף תמונת מפגע *</string>
+    <string name="reportDescHint">תיאור המפגע *</string>
+    <string name="chooseCityHint">בחירת עיר *</string>
+    <string name="chooseNeighborhoodHint">בחירת שכונה *</string>
+    <string name="optionalAddressHInt">רחוב ומספר בית (אופציונלי)</string>
+    <string name="chooseCategoryHint">בחירת קטגוריה *</string>
+    <string name="sendReportTextBtn">שליחת דיווח</string>
 </resources>

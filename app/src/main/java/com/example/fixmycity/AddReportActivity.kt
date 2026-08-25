@@ -12,7 +12,6 @@ import com.example.fixmycity.utils.CityNeighborhoodHelper
 import com.example.fixmycity.utils.Constants
 import com.example.fixmycity.utils.ReportValidator
 import com.example.fixmycity.utils.SignalManager
-import com.google.firebase.auth.FirebaseAuth
 
 class AddReportActivity : AppCompatActivity() {
 
@@ -121,7 +120,7 @@ class AddReportActivity : AppCompatActivity() {
         category: String
     ) {
         val imageUri = selectedImageUri ?: return
-        val currentUserId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+        val currentUserId = reportRepository.getCurrentUserId()
 
         reportRepository.uploadReportImage(
             imageUri = imageUri,

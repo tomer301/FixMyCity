@@ -25,7 +25,7 @@
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_revert"
-            android:contentDescription="חזרה למסך ראשי"
+            android:contentDescription="@string/backToMainActicityDesc"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -34,7 +34,7 @@
             android:id="@+id/tvHeaderTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="דיווח חדש"
+            android:text="@string/newReportTextHeader"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -78,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:contentDescription="תמונת המפגע" />
+                    android:contentDescription="@string/reportImageDesc" />
 
                 <LinearLayout
                     android:id="@+id/llImagePlaceholder"
@@ -94,13 +94,14 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:contentDescription="@null"
                         android:src="@android:drawable/ic_menu_camera"
-                        android:tint="@color/light_dark_blue" />
+                        app:tint="@color/light_dark_blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="צילום / צירוף תמונת מפגע *"
+                        android:text="@string/reportImageText"
                         android:textSize="16sp"
                         android:textColor="@color/light_dark_blue"
                         android:textStyle="bold"
@@ -114,7 +115,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint=" תיאור המפגע *"
+                android:hint="@string/reportDescHint"
                 app:counterEnabled="true"
                 app:counterMaxLength="200"
                 app:boxBackgroundColor="@color/white"
@@ -160,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="none"
                     android:textAlignment="viewStart"
-                    android:hint="בחירת עיר *"
+                    android:hint="@string/chooseCityHint"
                     app:simpleItems="@array/cities_array" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -185,7 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"
-                    android:hint="בחירת שכונה *"
+                    android:hint="@string/chooseNeighborhoodHint"
                     android:textAlignment="viewStart"
                     app:simpleItems="@array/default_neighborhoods" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -195,7 +196,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="רחוב ומספר בית (אופציונלי)"
+                android:hint="@string/optionalAddressHInt"
                 app:boxBackgroundColor="@color/white"
                 app:boxStrokeColor="@color/border_gray"
                 app:boxCornerRadiusTopStart="12dp"
@@ -235,7 +236,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"
-                    android:hint="בחירת קטגוריה *"
+                    android:hint="@string/chooseCategoryHint"
                     android:textAlignment="viewStart"
                     app:simpleItems="@array/categories_array" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -244,7 +245,7 @@
                 android:id="@+id/btnSubmitReport"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="שליחת דיווח"
+                android:text="@string/sendReportTextBtn"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:padding="12dp"
