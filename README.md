@@ -71,10 +71,12 @@ Since this project uses Firebase and sensitive configuration files are excluded 
 com.example.fixmycity
 │
 ├── App.kt                      // Application class for central initialization
-├── LoginActivity.kt            // Authentication entry point
-├── RegisterActivity.kt         // User registration screen
 ├── MainActivity.kt             // Main feed, filtering, and session management
 ├── AddReportActivity.kt        // Hazard creation screen
+│
+├── auth/                       // User authentication module
+│   ├── LoginActivity.kt        // Authentication entry point
+│   └── RegisterActivity.kt     // User registration screen
 │
 ├── models/
 │   └── HazardReport.kt         // Data class representing a hazard report
@@ -86,7 +88,9 @@ com.example.fixmycity
 │   └── ReportsAdapter.kt       // Custom RecyclerView adapter with Upvote UI logic
 │
 └── utils/
-    ├── SignalManager.kt        // Thread-safe Singleton Toast manager
+    ├── SignalManager.kt         // Thread-safe Singleton Toast manager
     ├── CityNeighborhoodHelper.kt// Helper for dynamic XML array loading
-    ├── ReportValidator.kt      // Input validation helper
-    └── Constants.kt            // Application constants and Firebase collection keys
+    ├── ReportValidator.kt       // Input validation helper (Reports)
+    ├── AuthValidator.kt         // Authentication validation logic
+    ├── NavigateUtils.kt         // Navigation helpers and Extensions
+    └── Constants.kt             // Application constants and Firebase collection keys
