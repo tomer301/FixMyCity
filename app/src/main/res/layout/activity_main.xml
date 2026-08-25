@@ -81,6 +81,7 @@
                 android:inputType="none"
                 android:hint="@string/filterBarAllNeighborhoodText"
                 android:textSize="13sp"
+                android:saveEnabled="false"
                 app:simpleItems="@array/default_neighborhoods" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,6 +106,7 @@
                 android:hint="@string/filterBarAllCityText"
                 android:inputType="none"
                 android:textSize="13sp"
+                android:saveEnabled="false"
                 app:simpleItems="@array/cities_array" />
         </com.google.android.material.textfield.TextInputLayout>
 
