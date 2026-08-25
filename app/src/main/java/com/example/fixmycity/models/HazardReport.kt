@@ -4,7 +4,6 @@ import com.example.fixmycity.utils.Constants
 
 data class HazardReport(
     val id: String = "",
-    val title: String = "",
     val description: String = "",
     val cityName: String = "",
     val neighborhood: String = "",
